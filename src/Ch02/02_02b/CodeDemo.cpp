@@ -19,7 +19,7 @@ public:
             std::cout<<"Charge: "<< charge<< std::endl;
             
             if(charge > 20)
-                charge -= normalDrain;  // Normal power usage
+                 charge -= normalDrain;  // Normal power usage
             else
                 charge -= lowPowerDrain; // Reduced drain in power-saving mode
 
