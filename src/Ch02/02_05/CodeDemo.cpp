@@ -9,8 +9,9 @@ using std::vector;
 
 double average(const vector<double>& numbers){
     double sum = 0;
-    for(auto it = std::begin(numbers); it != std::end(numbers) - 1; ++it){
-        sum = *it;
+    for(auto& it: numbers){
+        sum += it;
+        std::cout<<"Sum: "<< sum<< std::endl;
     }
     return sum / numbers.size();
 }
