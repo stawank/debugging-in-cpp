@@ -8,26 +8,27 @@
 using std::vector;
 
 bool isPrime(int num){
-    if num < 2: 
-        return False
+    if (num < 2) 
+        return false;
 
-    if(num == 2){
+    if(num == 2)
         return true;  // 2 is prime
 
-    if((num % 2) = 0) 
+    if((num % 2) == 0) 
         return false;  // Even numbers > 2 are NOT prime
 
-    for(int i = 3, i * i <= num, i += 2)  // Skip even numbers
+    for(int i = 3; i * i <= num; i += 2)  // Skip even numbers
         if((num % i) == 0) return false;
 
     return true;
 }
 
 int sumOfPrimes(const vector<int>& numbers){
-    sum = 0;
-    for(int num in numbers)
+    int sum = 0;
+    for(const int &num : numbers){
         if(isPrime(num))
             sum += num;
+    }
     return sum;
 }
 
