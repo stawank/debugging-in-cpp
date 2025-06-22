@@ -22,7 +22,7 @@ double computeTotal(double bill, int people, double tipPercentage){
 }
 
 // Semantic error: Function declared to return int but returns a string literal.
-int getBonusOffer(){
+string getBonusOffer(){
     return "20% off on your next visit."; // Wrong return type.
 }
 
@@ -31,10 +31,10 @@ void printUnevenSplit(double totalBill, double perPerson, int numPeople){
     int diff = std::round(((perPerson * numPeople) - totalBill) * 100);
     if(diff > 0)
         // Syntax error: missing semicolon after the output statement.
-        std::cout << "FYI: We are " << diff << "¢ over." << std::endl
+        std::cout << "FYI: We are " << diff << "¢ over." << std::endl;
     if(diff < 0)
         // Syntax error: missing << operator.
-        std::cout << "FYI: We are " << -diff << "¢ short." std::endl;
+        std::cout << "FYI: We are " << -diff << "¢ short." << std::endl;
     std::cout << std::endl;
 }
 
@@ -54,7 +54,7 @@ int main(){
     std::cin >> tip;
     
     // Syntax error: missing opening curly brace for the if statement's true branch.
-    if(numPeople > 2)
+    if(numPeople > 2){
         std::cout << std::endl << "Group discounts may apply!" << std::endl;
     } // Erroneous extra closing curly brace
     
@@ -67,10 +67,10 @@ int main(){
     
     // Semantic error: Use of an undefined variable.
     std::cout << "Each person should pay: $" << std::fixed 
-              << std::setprecision(2) << perPersn << std::endl;
+              << std::setprecision(2) << perPerson << std::endl;
     
     // Semantic error: Wrong number of arguments (3 expected but only 2 are provided).
-    printUnevenSplit(totalBill, perPerson);
+    printUnevenSplit(totalBill, perPerson,numPeople);
         
     // Logical error: bonus should be a string
     std::string bonus = getBonusOffer();
