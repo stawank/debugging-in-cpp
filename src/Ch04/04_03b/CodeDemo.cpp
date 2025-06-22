@@ -9,7 +9,7 @@
 #include "globals.h"
 
 // Linker error: redefined variable (globalDiscount is already defined in globals.h)
-double globalDiscount = 5.0;
+//double globalDiscount = 5.0;
 
 // Linker error: external function declared but not defined anywhere
 void externalPromotion();
