@@ -9,7 +9,7 @@
 #include "globals.h"
 
 // Linker error: redefined variable (globalDiscount is already defined in globals.h)
-double globalDiscount = 5.0;
+//double globalDiscount = 5.0;
 
 // Linker error: external function declared but not defined anywhere
 void externalPromotion();
@@ -22,7 +22,7 @@ double computeTotal(double bill, int people, double tipPercentage){
 }
 
 // Semantic error: Function declared to return int but returns a string literal.
-string getBonusOffer(){
+std::string getBonusOffer(){
     return "20% off on your next visit."; // Wrong return type.
 }
 
@@ -42,7 +42,7 @@ int main(){
     double billAmount, tipPercentage;
     int numPeople;            
     // Semantic error: Declaration of a reference without initialization.
-    int &tip;
+    double &tip = tipPercentage;
 
     std::cout << "===== Bill Split Calculator =====" << std::endl << std::endl;
     
@@ -59,8 +59,8 @@ int main(){
     } // Erroneous extra closing curly brace
     
     // Semantic error: Declaration with auto without an initializer.
-    auto totalBill;
-    totalBill = computeTotal(billAmount, numPeople, tip);
+    //auto totalBill;
+    auto totalBill = computeTotal(billAmount, numPeople, tip);
     double perPerson = std::round((totalBill / numPeople) * 100.0) / 100.0;
 
     std::cout << std::endl << "Grand Total: $" << totalBill << std::endl;
