@@ -21,7 +21,7 @@ void appendNode(Node ** head, Node ** tail, const std::string & newName){
     newNode->name = newName;
     newNode->next = nullptr;
     // head[MAX_ENTRIES] = nullptr;
-    tail = nullptr;
+    //tail = nullptr;
     if(*head == nullptr){
         *head = newNode;
         *tail = newNode;

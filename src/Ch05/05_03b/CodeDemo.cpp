@@ -61,7 +61,7 @@ int main(){
     Node * tail = nullptr;
     while(iss >> token){
         appendNode(&head, &tail, token);
-        iss.seekg(0);
+        //iss.seekg(0);
     }
     
     std::cout << "The names in the linked list are: ";
